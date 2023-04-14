@@ -9,14 +9,21 @@ public class HomePage {
     @FindBy(xpath = "//a[@href='/checkboxes']")
     private WebElement checkboxLink;
 
+    @FindBy(xpath = "//a[@href='/login']")
+    private WebElement formAuthenticationLink;
+
     public WebDriver driver;
 
-    public HomePage(WebDriver driver){
+    public HomePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
 
-    public void goToCheckboxPage(){
+    public void goToCheckboxPage() {
         checkboxLink.click();
+    }
+
+    public void goToFormAuthenticationPage() {
+        formAuthenticationLink.click();
     }
 }

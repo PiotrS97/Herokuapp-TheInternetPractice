@@ -17,9 +17,11 @@ public class CheckboxesTest extends BaseTest{
     @Test
     public void checkboxClickTest(){
         homePage.goToCheckboxPage();
+        boolean firstCheckboxState = checkboxPage.getFirstCheckboxState();
+        boolean secondCheckboxState = checkboxPage.getSecondCheckboxState();
         checkboxPage.clickCheckbox();
-        Assert.assertTrue(checkboxPage.getFirstCheckboxState());
-        Assert.assertFalse(checkboxPage.getSecondCheckboxState());
+        Assert.assertEquals(checkboxPage.getFirstCheckboxState(), !firstCheckboxState);
+        Assert.assertEquals(checkboxPage.getSecondCheckboxState(), !secondCheckboxState);
     }
 
 }
